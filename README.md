@@ -1,4 +1,4 @@
-# SpeedupJS
+
 
 <div align="center">
     <img src="https://raw.githubusercontent.com/minewhat/speedupjs/master/logo.png">
