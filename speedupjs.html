@@ -1,0 +1,73 @@
+<!-- SpeedupJS Script begins -->
+<script type="text/javascript">
+    function speedupJSDomReady(callback) {
+
+        var called = false;
+
+        function deRegister() {
+            if (document.removeEventListener) {
+                document.removeEventListener("DOMContentLoaded", readyStateCheck);
+            } else if (document.detachEvent) {
+                document.detachEvent("onreadystatechange", readyStateCheck);
+            }
+        }
+
+        function readyStateCheck() {
+            if (document.readyState === "interactive" || document.readyState === "complete") {
+                deRegister();
+                if (!called) {
+                    called = true;
+                    callback();
+                }
+                return true;
+            }
+        }
+
+        function defer(method) {
+            if (!readyStateCheck()) {
+                setTimeout(function () {
+                    defer(method)
+                }, 50);
+            }
+        }
+
+        if (!readyStateCheck()) {
+            if (window.__cfRocketOptions) {
+                //Rocket loader wont give DOMContentLoaded. We are on our own.
+                defer(callback);
+            }
+            else if (document.addEventListener) {
+                document.addEventListener("DOMContentLoaded", readyStateCheck);
+            } else if (document.attachEvent) {
+                document.attachEvent("onreadystatechange", readyStateCheck);
+            }
+        }
+    }
+
+    speedupJSDomReady(function () {
+        var allScripts = document.querySelectorAll('script');
+        for (var scr in allScripts) {
+            scr = allScripts[scr]
+            try {
+                if (scr.type == "text/speedupscript") {
+                    if (scr.src) {
+                        var c = document.createElement('script');
+                        c.type = "text/javascript";
+                        c.src = scr.src;
+                        c.async = true;
+                        document.head.appendChild(c);
+                    }
+                    else if (scr.innerText) {
+                        var code = scr.innerText;
+                        code = new Function(code)
+                        code()
+                    }
+                }
+            }
+            catch (e) {
+                console.log(e)
+            }
+        }
+    })
+</script>
+<!-- SpeedupJS Script ends -->
