@@ -35,6 +35,7 @@ Any script tag inline with <script></script> need to be modified of form <script
 
 - **Externaly Linked JS**: Any externaly linked tag of form <script src="xyz.com/file.js"></script> need to be modified of form <script type="text/speedupscript" src="xyz.com/file.js"></script>
 
+- **Shopify Script Tag**:  If you are a shopify store you might see snippets/XYZ.liquid containing lines like these  {{ 'https://xyz.com/file.js' | script_tag }}  you need to change this to <script type="text/speedupscript" src="https://xyz.com/file.js"></script> . Essentially we are converting the default shopfiy expansion to speedjs type.
 
 ## Getting help
 
