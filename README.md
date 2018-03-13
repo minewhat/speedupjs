@@ -30,10 +30,10 @@ Absolutely no depedencies, its pure JS
 
 JS resources are of two types.
 - **Inline JS**:
-Any script tag inline with <script></script> need to be modified of form <script type="text/speedupjscript"></script>
+Any script tag inline with <script></script> need to be modified of form <script type="text/speedupscript"></script>
 
 
-- **Externaly Linked JS**: Any externaly linked tag of form <script src="xyz.com/file.js"></script> need to be modified of form <script type="text/speedupjscript" src="xyz.com/file.js"></script>
+- **Externaly Linked JS**: Any externaly linked tag of form <script src="xyz.com/file.js"></script> need to be modified of form <script type="text/speedupscript" src="xyz.com/file.js"></script>
 
 
 ## Getting help
