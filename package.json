@@ -1,0 +1,19 @@
+{
+  "name": "speedupjs",
+  "version": "1.0.0",
+  "description": "Speedup your website or eCommerce store",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minewhat/speedupjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minewhat/speedupjs/issues"
+  },
+  "homepage": "https://github.com/minewhat/speedupjs#readme"
+}

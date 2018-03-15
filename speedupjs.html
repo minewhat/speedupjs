@@ -45,29 +45,60 @@
     }
 
     speedupJSDomReady(function () {
-        var allScripts = document.querySelectorAll('script');
-        for (var scr in allScripts) {
-            scr = allScripts[scr]
-            try {
-                if (scr.type == "text/speedupscript") {
-                    if (scr.src) {
-                        var c = document.createElement('script');
-                        c.type = "text/javascript";
-                        c.src = scr.src;
-                        c.async = true;
-                        document.head.appendChild(c);
+        var allNodes = document.querySelectorAll('[type="text/speedupscript"], [type="text/speedupcss"]')
+        function executer(index) {
+            if(index < allNodes.length){
+                execute(allNodes[index], function(){
+                    executer(index+1)
+                })
+            }
+        }
+        function execute(element, callback){
+            try{
+                if(element.type == 'text/speedupscript'){
+                    if(element.src){
+                        var script = document.createElement('script');
+                        script.type = "text/javascript";
+                        script.src = element.src;
+                        script.async = true;
+                        script.onload = function(){
+                            callback()
+                        }
+                        document.head.appendChild(script);
                     }
-                    else if (scr.innerText) {
-                        var code = scr.innerText;
+                    else if(element.innerText){
+                        var code = element.innerText;
                         code = new Function(code)
                         code()
+                        callback()
+                    }
+                }
+                else if(element.type == 'text/speedupcss'){
+                    if(element.href){
+                        var link = document.createElement('link');
+                        link.type = "text/css";
+                        link.rel = "stylesheet";
+                        link.onload = function(){
+                            callback()
+                        }
+                        link.href = element.href;
+                        element.parentNode.insertBefore(link,element)
+                    }
+                    else{
+                        var link = document.createElement('style');
+                        link.type = "text/css";
+                        link.innerText = element.innerText;
+                        link.innerHTML = element.innerHTML;
+                        element.parentNode.insertBefore(link,element)
+                        callback()
                     }
                 }
             }
-            catch (e) {
+            catch(e){
                 console.log(e)
             }
         }
+        executer(0)
     })
 </script>
 <!-- SpeedupJS Script ends -->
