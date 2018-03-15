@@ -42,8 +42,7 @@ CSS resources are of two types.
 - **Inline CSS**:
 Any style tag inline with <style type="text/css"></style> need to be modified of form <style type="text/speedupcss"></style>
 
-- **Externaly Linked CSS**: Any externaly linked tag of form <link rel="stylesheet" type="text/css" href="xyz.com/file.css"> need to be modified of form 
-<link rel="stylesheet" type="text/speedupcss" href="xyz.com/file.css">
+- **Externaly Linked CSS**: Any externaly linked tag of form <link rel="stylesheet" type="text/css" href="xyz.com/file.css"> need to be modified of form <link rel="stylesheet" type="text/speedupcss" href="xyz.com/file.css">
 
 ## Getting help
 
