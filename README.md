@@ -30,19 +30,19 @@ Absolutely no depedencies, its pure JS
 
 JS resources are of two types.
 - **Inline JS**:
-Any script tag inline with <script></script> need to be modified of form <script type="text/speedupscript"></script>
+Any script tag inline with `<script></script>` need to be modified of form `<script type="text/speedupscript"></script>`
 
 
-- **Externaly Linked JS**: Any externaly linked tag of form <script src="xyz.com/file.js"></script> need to be modified of form <script type="text/speedupscript" src="xyz.com/file.js"></script>
+- **Externaly Linked JS**: Any externaly linked tag of form `<script src="xyz.com/file.js"></script>` need to be modified of form `<script type="text/speedupscript" src="xyz.com/file.js"></script>`
 
 - **Shopify Script Tag**:  If you are a shopify store you might see snippets/XYZ.liquid containing lines like these  
-{{ 'xyz.com/file.js' | script_tag }}  you need to change this to <script type="text/speedupscript" src="xyz.com/file.js"></script> . Essentially we are converting the default shopfiy expansion to speedjs type.
+{{ 'xyz.com/file.js' | script_tag }}  you need to change this to `<script type="text/speedupscript" src="xyz.com/file.js"></script>`. Essentially we are converting the default shopfiy expansion to speedjs type.
 
 CSS resources are of two types.
 - **Inline CSS**:
-Any style tag inline with <style type="text/css"></style> need to be modified of form <style type="text/speedupcss"></style>
+Any style tag inline with `<style type="text/css"></style>` need to be modified of form `<style type="text/speedupcss"></style>`.
 
-- **Externaly Linked CSS**: Any externaly linked tag of form <link rel="stylesheet" type="text/css" href="xyz.com/file.css"> need to be modified of form <link rel="stylesheet" type="text/speedupcss" href="xyz.com/file.css">
+- **Externaly Linked CSS**: Any externaly linked tag of form `<link rel="stylesheet" type="text/css" href="xyz.com/file.css">` need to be modified of form `<link rel="stylesheet" type="text/speedupcss" href="xyz.com/file.css">`
 
 ## Getting help
 
