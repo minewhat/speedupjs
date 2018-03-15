@@ -21,9 +21,9 @@
 Absolutely no depedencies, its pure JS
 
 ## Installation
-<script type="text/javascript>
-  /* Paste the lastest code */
-</script>  
+```
+<script type="text/javascript src="https://d1kseyj81rxrhk.cloudfront.net/resources/speedup.js"></script>  
+```
 
 
 ## Usage
