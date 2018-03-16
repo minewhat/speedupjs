@@ -5,6 +5,7 @@
 </div>
 <br />
 
+[![Build Status](https://travis-ci.org/minewhat/speedupjs.svg?branch=master)](https://travis-ci.org/minewhat/speedupjs)
   
 **Why**: Most of the websites don't use a tag manager like GTM ( Google Tag Manager ) to load third party scripts or page specific scripts. These scripts and css links will slow down the page load speed. SpeedUp JS will enhance the performance by prioritizing scripts and defering their load after DOM Load event.
 
