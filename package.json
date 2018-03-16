@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/minewhat/speedupjs/issues"
   },
-  "homepage": "https://github.com/minewhat/speedupjs#readme"
+  "homepage": "https://github.com/minewhat/speedupjs#readme",
+  "dependencies": {
+    "mocha": "^5.0.4"
+  }
 }
